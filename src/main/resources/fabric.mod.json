@@ -34,8 +34,5 @@
 		"java": ">=17",
 		"fabric-api": "*",
 		"fabric-language-kotlin": ">=1.9.23"
-	},
-	"dependencies": {
-		"yet_another_config_lib_v3": "*"
 	}
 }

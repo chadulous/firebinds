@@ -26,21 +26,26 @@ object FireBinds : ModInitializer {
 				configClass
 			)
 		}
-		val keyBinding: KeyBinding = KeyBindingHelper.registerKeyBinding(
+		val spawnBinding: KeyBinding = KeyBindingHelper.registerKeyBinding(
 			KeyBinding("key.mcdiamondfire.spawn", InputUtil.Type.KEYSYM, GLFW.GLFW_RELEASE_BEHAVIOR_NONE, "category.mcdiamondfire.keybinds")
+		)
+		val voteBinding: KeyBinding = KeyBindingHelper.registerKeyBinding(
+			KeyBinding("key.mcdiamondfire.vote", InputUtil.Type.KEYSYM, GLFW.GLFW_RELEASE_BEHAVIOR_NONE+1, "category.mcdiamondfire.keybinds")
 		)
 
 		ClientTickEvents.END_CLIENT_TICK.register(ClientTickEvents.EndTick { client: MinecraftClient ->
-			while (keyBinding.wasPressed()) {
+			while (spawnBinding.wasPressed()) {
 				logger.info(Objects.requireNonNull(client.currentServerEntry)?.address)
 				logger.info(this.getConfig().ips.contains(Objects.requireNonNull(client.currentServerEntry)?.address).toString())
 				client.player?.networkHandler?.sendChatCommand("spawn")
+			}
+			while (voteBinding.wasPressed()) {
+				client.player?.networkHandler?.sendChatCommand("vote")
 			}
 		})
 	}
 
 	fun getConfig(): ModConfig {
-		val config = AutoConfig.getConfigHolder(ModConfig::class.java).config
-		return config;
+		return AutoConfig.getConfigHolder(ModConfig::class.java).config
 	}
 }
