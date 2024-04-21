@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "firebinds",
+	"version": "${version}",
+	"name": "FireBinds",
+	"description": "Keybinds/Actions for the DiamondFire minecraft server",
+	"authors": [
+		"chadulous"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/firebinds/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			{
+				"value": "mavdotkt.firebinds.FireBinds",
+				"adapter": "kotlin"
+			}
+		],
+		"modmenu": [
+			{
+				"value": "mavdotkt.firebinds.ModMenuIntegration",
+				"adapter": "kotlin"
+			}
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.15.10",
+		"minecraft": "~1.20.4",
+		"java": ">=17",
+		"fabric-api": "*",
+		"fabric-language-kotlin": ">=1.9.23"
+	},
+	"dependencies": {
+		"yet_another_config_lib_v3": "*"
+	}
+}
