@@ -1,5 +1,8 @@
 {
   "category.mcdiamondfire.keybinds": "FireBinds",
+  "text.autoconfig.firebinds.title": "Configure FireBinds",
+  "text.autoconfig.firebinds.option.ips": "Valid IPs",
+  "text.autoconfig.firebinds.option.ips.@Tooltip": "These are the valid IP addresses for DiamondFire, the actions will only run if you are on one of these IPs.\n(If empty, will run on any server, not including singleplayer)\nNOTE: Copy the IP you use to connect to DiamondFire & Paste it here verbatim",
   "key.mcdiamondfire.spawn": "Go to Spawn",
   "key.mcdiamondfire.vote": "Vote for Current Plot"
 }
