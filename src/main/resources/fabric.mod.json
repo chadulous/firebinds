@@ -33,6 +33,7 @@
 		"minecraft": "~1.20.4",
 		"java": ">=17",
 		"fabric-api": "*",
-		"fabric-language-kotlin": ">=1.9.23"
+		"fabric-language-kotlin": ">=1.9.23",
+		"cloth-config": ">=13.0.121"
 	}
 }

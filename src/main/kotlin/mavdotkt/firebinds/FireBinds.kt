@@ -22,8 +22,7 @@ object FireBinds : ModInitializer {
 			)
 		}
 		println("Initializing FireBinds")
-		register()
-
+		Registry.init()
 //		val spawnBinding: KeyBinding = KeyBindingHelper.registerKeyBinding(
 //			KeyBinding("key.mcdiamondfire.spawn", InputUtil.Type.KEYSYM, GLFW.GLFW_RELEASE_BEHAVIOR_NONE, "category.mcdiamondfire.keybinds")
 //		)
@@ -42,7 +41,8 @@ object FireBinds : ModInitializer {
 //					client.player?.networkHandler?.sendChatCommand("vote")
 //				}
 //			}
-			check(client, this.getConfig())
+//			check(client, this.getConfig())
+			Registry.executePressed(client, this.getConfig())
 		})
 	}
 
